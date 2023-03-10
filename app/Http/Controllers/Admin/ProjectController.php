@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Project;
+use App\Models\Type;
 class ProjectController extends Controller
 {
     public function index(){
         $projects = Project::all();
+        
 
-        return view('admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects',));
     }
 
     public function show(Project $project){
@@ -19,11 +21,16 @@ class ProjectController extends Controller
         return view('admin.projects.show', compact('project'));
     }
     public function create(){
-        return view('admin.projects.create');
+        $types = Type::all();
+
+        return view('admin.projects.create' , compact('types'));
     }
 
     public function edit(Project $project){
-        return view('admin.projects.edit' , compact('project'));
+        $types = Type::all();
+
+        
+        return view('admin.projects.edit' , compact('project', 'types'));
     }
 
     public function update(Request $request , Project $project){

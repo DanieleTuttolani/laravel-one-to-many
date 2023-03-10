@@ -13,6 +13,14 @@
                 <div class="col">
                   <input type="text" id="title" name="title" class="form-control" value="" aria-describedby="passwordHelpInline">
                 </div>
+                <div class="col-3">
+                  <select id="type_id" name="type_id" class="form-control">
+                    <option value="">Nessun genere</option>
+                    @foreach ($types as $type)
+                    <option value="{{$type->id}}">{{$type->title}}</option>
+                    @endforeach
+                  </select>
+                </div>
               </div>
               {{-- descrzione --}}
               <div class="row g-3 align-items-center my-3">
