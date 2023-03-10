@@ -13,6 +13,7 @@
                 <li class="my-4">Link GitHub:  {{$proj->proj_link}} </li>
                 <li class="my-4">Img-str:  {{$proj->img}} </li>
                 <li class="my-4">Collaboratori:  {{$proj->collab}} </li>
+                <li class="my-4">Gruppo:  {{$proj->Type?->title}} </li>
             </ul>
             <div class="text-center">
                 <i class="fa-solid fa-hand-point-up fa-bounce fs-2"></i>
