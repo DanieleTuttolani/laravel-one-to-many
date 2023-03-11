@@ -30,7 +30,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
-                        <h1>daniele Portfolio</h1>
+                        <h1>Daniele Portfolio</h1>
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>

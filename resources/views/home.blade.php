@@ -1,20 +1,19 @@
+@extends('layouts.bgc_container')
 @extends('layouts.app')
 @section('content')
-
-<div class="my-bgc">
-    <div class="my-container faded p-3">
+    @section('c-content')
         {{-- intestazioni presentazioni e foto --}}
-        <div class="struttura-genitore titolo d-flex">
+        <div class="struttura-genitore titolo d-flex my-4">
             <div class="img-pit struttura">
                 <div class="img-wrapper struttura">
                     <img class="img-fluid" src="https://www.petme.it/wp-content/uploads/2022/07/Schermata-2022-07-14-alle-17.50.21.png" alt="">
                 </div>
             </div>
-            <div class="desc-wrapper col-5 struttura">
-                <div class="name">prova</div>
-                <div class="desc">prova</div>
+            <div class="desc-wrapper col-5 struttura text-light p-4">
+                <div class="name"><h1>Daniele Tuttolani</h1></div>
+                <div class="desc"><p>Atri Abruzzo Italia</p></div>
             </div>
-            <div class="info wrapper struttura">delle info</div>
+            <div class="info wrapper struttura p-4"><h4>Al momento impiegato in nesun progetto</h4></div>
         </div>
         {{-- vetrina progetti --}}
         <section class="projects d-flex">
@@ -24,7 +23,8 @@
                         <div class="title p-1">
                             <h4>Vetrina Progetti</h4>
                         </div>
-                        <div class="project-body struttura p-3">
+                        @forelse ($projects as $project)
+                        <div class="project-body struttura mb-3 p-3">
                             <img class="img-fluid" src="https://s1.1zoom.me/big0/810/Dogs_Husky_Snout_574782_1280x720.jpg" alt="">
                             <hr class="border-light">
                             <div class="text-wrapper d-flex row text-light">
@@ -33,6 +33,11 @@
                                 <div class="col"><p>Descrizione :</p></div>
                             </div>
                         </div>
+                        @empty
+                            <div class="project-body">
+                                <h1>Non ci sono progetti in vetrina al momento</h1>
+                            </div>                   
+                        @endforelse
                     </div>
             </section>
             {{-- right --}}
@@ -49,6 +54,12 @@
                 </div>
             </section>
         </section>
-    </div>
-</div>
+    @endsection
 @endsection
+
+
+
+
+
+
+

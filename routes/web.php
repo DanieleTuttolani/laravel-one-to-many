@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+use App\Http\Controllers\Guest\ProjectController as GuestProjectController;
 
 
 /*
@@ -15,10 +16,10 @@ use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
+Route::prefix('guest/projects')->name('guest.projects.')->group(function(){
+    
 });
+Route::get('/', [GuestProjectController::class, 'home'])->name('home');
 
 Route::middleware('auth')->prefix('admin/projects')->name('admin.projects.')->group(function(){
     Route::get('/index', [AdminProjectController::class , 'index'])->name('index');
