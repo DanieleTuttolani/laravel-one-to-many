@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.bgc_container')
 
+@extends('layouts.app')
 @section('content')
+@section('c-content')
 
 <div class="container">
     <a href="{{route('admin.projects.create')}}" class="btn btn-primary"> crea progetto</a>

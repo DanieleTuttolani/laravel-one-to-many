@@ -25,12 +25,12 @@
                         </div>
                         @forelse ($projects as $project)
                         <div class="project-body struttura mb-3 p-3">
-                            <img class="img-fluid" src="https://s1.1zoom.me/big0/810/Dogs_Husky_Snout_574782_1280x720.jpg" alt="">
+                            <img class="img-fluid" src="{{asset('storage/'.$project->img)}}" alt="">
                             <hr class="border-light">
-                            <div class="text-wrapper d-flex row text-light">
-                                <div class="col-6"><p>Sogetto : </p></div>
-                                <div class="col-6"><p>Collaboratori :</p></div>
-                                <div class="col"><p>Descrizione :</p></div>
+                            <div class="text-wrapper text-light">
+                                <div class="col-6"><h4>Sogetto : {{$project->title}} </h4></div>
+                                <div class="col-6"><h4>Collaboratori : {{$project->collab}}</h4></div>
+                                <div class="col"><h4>Descrizione : {{$project->description}}</h4></div>
                             </div>
                         </div>
                         @empty

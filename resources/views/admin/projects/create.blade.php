@@ -1,7 +1,9 @@
+@extends('layouts.bgc_container')
 @extends('layouts.app')
 @section('content')
-<h1>Crea</h1>
-<div class="my-container container">
+@section('c-content')
+<div class="my-container text-light vh-100 p-3">
+  <h1>Inserisci Progetto</h1>
     <div class="">
         <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -13,6 +15,7 @@
                 <div class="col">
                   <input type="text" id="title" name="title" class="form-control" value="" aria-describedby="passwordHelpInline">
                 </div>
+                {{-- type --}}
                 <div class="col-3">
                   <select id="type_id" name="type_id" class="form-control">
                     <option value="">Nessun genere</option>
@@ -20,6 +23,12 @@
                     <option value="{{$type->id}}">{{$type->title}}</option>
                     @endforeach
                   </select>
+                </div>
+                <div class="col-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" id="showCase" name="showCase">
+                    <label class="form-check-label" for="flexCheckIndeterminate">Mostra in vetrina</label>
+                  </div>
                 </div>
               </div>
               {{-- descrzione --}}

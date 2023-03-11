@@ -10,7 +10,7 @@ use App\Models\Project;
 class ProjectController extends Controller
 {
     public function home(){
-        $projects = Project::all();
+        $projects = Project::where('showCase', '1')->get();
         
 
         return view('home', compact('projects',));

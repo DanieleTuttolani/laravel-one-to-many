@@ -42,9 +42,10 @@ class ProjectController extends Controller
         $project->update($data);
         return to_route('admin.projects.show', compact('project'));
     }
-    public function store(Request $request){
+    public function store(Request $request, Project $new_proj){
         $data = $request->all();
         $img_path = Storage::put('uploads', $data['img']);
+        $data['img']=$img_path;
         $new_proj = new Project();
         
         
